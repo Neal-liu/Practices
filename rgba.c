@@ -164,12 +164,27 @@ void process_img()
         rgba_to_bw((uint32_t *) *row_pointers, width, height, stride);
 
 }
+
+int NanoTime(void)
+{
+	struct timespec t;
+	t.tv_sec = t.tv_nsec = 0;
+	clock_gettime(CLOCK_MONOTONIC, &t);
+//	return t.tv_nsec;
+	return t.tv_sec * 1000000000LL + t.tv_nsec;
+}
+
 int main(int argc, char *argv[])
 {
+	int starttime = 0, endtime = 0;
+
 	read_image("beauty.png");
 	table();
+	starttime = NanoTime();
 	process_img();
-	printf("success !!");
+	endtime = NanoTime();
+	printf("success !!\n Process img time is %d nanoseconds\n", (endtime-starttime));
+
 	write_img(OUTPUT);
 
 	return 0;
