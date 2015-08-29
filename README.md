@@ -12,3 +12,14 @@ reverse.c :
 [links](https://stackoverflow.com/questions/1614723/why-is-this-string-reversal-c-code-causing-a-segmentation-fault)	
 用 C 語言實做 void reverse(char *s) 來反轉 NULL 結尾的字串. 
 
+
+rgba.c : 
+
+[links](https://neal.hackpad.com/Summer-2015-Week-4-gcTpJvO9ZnC)
+
+將 RGBA 轉換為黑白影像. 
+
+請提出效能改善的方案：
+- 建立表格加速浮點數操作 (L1 cache?)
+- 減少位移數量
+- 最終輸出的緩衝區 (in-place)
