@@ -13,5 +13,33 @@ gray: rgba.c
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ -DOUTPUT=\"gray.png\" $(PNGLIBS)
 	./gray && display gray.png
 
+level: level.c
+	gcc level.c
+	./a.out 10
+
+malloc: malloc0.c
+	gcc malloc0.c
+	./a.out
+
+bubblesort: bubblesort.c
+	gcc bubblesort.c
+	./a.out
+
+trailing: trailingZero.c
+	gcc trailingZero.c
+	./a.out
+
+add: add.c
+	gcc add.c
+	./a.out
+
+test: test.c
+	gcc test.c
+	./a.out
+
+stair: stairs.c
+	gcc stairs.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
