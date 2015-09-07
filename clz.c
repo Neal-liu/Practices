@@ -50,9 +50,16 @@ uint32_t clz2(uint8_t x) {
 	return table[x>>4];
 }
 
+int ctz(uint32_t a){
+	uint32_t c = clz(a & -a);
+	return a ? 31-c : c;
+}
+
 int main(void)
 {
-	printf("number is %d\n", clz(0x7FFFFFFF));
+	printf("number is %d\n", clz(0x3FFFFFFF));
+	printf("number is %d\n", clz1(0x3FFFFFFF));
+	printf("number is %d\n", ctz(0x3FFFFFF0));
 
 	return 0;
 }
