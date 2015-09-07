@@ -52,6 +52,7 @@ struct Node *swap(struct Node *p, struct Node *q){
 	return q;
 }
 
+/* delete duplicates from linked-list */
 void Unique(struct Node *head){
 
 	struct Node *pass = NULL;
@@ -65,8 +66,11 @@ void Unique(struct Node *head){
 		iteration = pass;
 		while(current->next != NULL){
 			if(pass->value == iteration->next->value){
-				if(current->next->next != NULL)
+				if(current->next->next != NULL){
+					struct Node *dup = current->next;
 					current->next = current->next->next;
+					free(dup);
+				}
 				else
 					current->next = NULL;
 			}
