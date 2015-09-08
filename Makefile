@@ -41,5 +41,9 @@ stair: stairs.c
 	gcc stairs.c
 	./a.out
 
+isMultipleOf3: 
+	gcc isMultipleOf3.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
