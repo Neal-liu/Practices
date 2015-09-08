@@ -45,5 +45,9 @@ isMultipleOf3:
 	gcc isMultipleOf3.c
 	./a.out
 
+findMiddleNode:
+	gcc findMiddleNode.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
