@@ -90,6 +90,31 @@ void Unique(struct Node *head){
 
 }
 
+void findCircular(struct Node *head){
+
+	struct Node *prev = NULL;
+	struct Node *current = head;
+	while(current != NULL){
+		struct Node *next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	bool hascycle = (prev == head) && (head != NULL) && (head->next != NULL);
+
+	/* reconstruct the list */
+	current = prev;
+	prev = NULL;
+	while(current != NULL){
+		struct Node *next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	return hascycle;
+}
+
 
 void push_value(int value){
 
@@ -109,8 +134,9 @@ int main(void)
 	head = malloc(sizeof(struct Node));
 	head->value = 3;
 
+	push_value(1);
 	push_value(2);
-	push_value(7);
+/*	push_value(7);
 	push_value(8);
 	push_value(3);
 	push_value(6);
@@ -118,11 +144,11 @@ int main(void)
 	push_value(1);
 	push_value(1);
 	push_value(8);
-
+*/
 	printf("Before Sorting : 3, 2, 7, 8, 3, 6, 2, 1, 1, 8\n");
 //	printf("Before Sorting : 3, 2, 7, 8, 8, 6, 1, 1 \n");
-//	BubbleSort(head);
-	Unique(head);
+	BubbleSort(head);
+//	Unique(head);
 
 	return 0;
 }
