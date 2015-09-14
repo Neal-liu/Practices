@@ -57,5 +57,9 @@ heapSort:
 	gcc heapSort.c
 	./a.out
 
+binarySearch:
+	gcc binarySearch.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
