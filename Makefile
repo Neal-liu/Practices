@@ -49,5 +49,13 @@ findMiddleNode:
 	gcc findMiddleNode.c
 	./a.out
 
+insertSort:
+	gcc insertSort.c
+	./a.out
+
+heapSort:
+	gcc heapSort.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
