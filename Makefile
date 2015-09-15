@@ -65,5 +65,9 @@ selectionSort:
 	gcc selectionSort.c
 	./a.out
 
+itoa:
+	gcc itoa.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
