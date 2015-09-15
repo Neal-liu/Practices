@@ -32,11 +32,42 @@ char *itoa(int n){
 	return ret;
 }
 
+int atoi(char *str){
+	bool negative = false;
+	int value = 0;
+
+	if(str == NULL)
+		return value;
+
+	if(*str == '-'){
+		negative = true;
+		str++;
+	}
+
+	while(*str != '\0'){
+		if(*str >= '0' && *str <= '9'){
+			value = value*10 + (int)*str - 48;	// 48 = '0'
+		}
+		str++;
+	}
+	if(negative)
+		value = -value;
+
+	return value;
+}
+
 int main(void)
 {
-	char *string = itoa(83246);
-
+	char *string = itoa(14357);
 	printf("string is %s\n", string);
+	
+	int num = atoi("-124");
+	printf("test is %d\n", num);
 
 	return 0;
 }
+
+
+
+
+
