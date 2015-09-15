@@ -61,5 +61,9 @@ binarySearch:
 	gcc binarySearch.c
 	./a.out
 
+selectionSort:
+	gcc selectionSort.c
+	./a.out
+
 clean:
 	rm -r gray gray.png
