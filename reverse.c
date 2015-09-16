@@ -7,7 +7,7 @@ char *reverse2(char *);
 
 int main(void)
 {
-	char str[] = "Test";
+	char str[] = "This is a Test";
 
 	printf("%s\n",str);
 	reverse_string(str);
