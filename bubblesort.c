@@ -52,6 +52,17 @@ struct Node *swap(struct Node *p, struct Node *q){
 	return q;
 }
 
+/* doubly linked-list do swap. */
+struct Node *doubleswap(struct Node *n1, struct Node *n2){
+	struct Node *temp1 = n1->prev;
+	struct Node *temp2 = n2->next;
+	n1->next = temp2;
+	n1->prev = n2;
+	n2->next = n1;
+	n2->prev = temp1;
+	return n2;
+}
+
 /* delete duplicates from linked-list */
 void Unique(struct Node *head){
 
