@@ -143,6 +143,15 @@ void insert(struct Node *n1, struct Node *n2){
 	n1->next = n2;
 }
 
+/* Delete nodes from singly linked-list when pointer to the previous node is not available. */
+void deleteNode(struct Node *ptr){
+	struct Node *temp = ptr->next;
+	ptr->value = ptr->next->value;
+	ptr->next = temp->next;
+	free(temp);
+}
+
+
 int main(void)
 {
 	head = malloc(sizeof(struct Node));
