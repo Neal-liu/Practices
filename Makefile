@@ -2,6 +2,10 @@ CFLAGS = -Wall -Werror -std=gnu99 -O0 -g
 LDFLAGS = `pkg-config --libs --cflags libpng`
 PNGLIBS := $(shell pkg-config libpng --libs)
 
+rotateimg:
+	gcc RotateImg.c
+	./a.out
+
 palindrome:
 	gcc palindrome.c
 	./a.out
