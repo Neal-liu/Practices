@@ -4,6 +4,8 @@ PNGLIBS := $(shell pkg-config libpng --libs)
 
 countone:
 	gcc countOne.c
+bit:
+	gcc BIT.c
 	./a.out
 
 rotateimg:
